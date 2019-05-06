@@ -1,0 +1,61 @@
+<section  class="container-fluid">
+
+
+<header class="container par-ile-spali text-center">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Ile mi spali ?</p>
+    </div>
+  </div>
+</header>
+
+<div class="main-content container text-center">
+<div class="row">
+<div class="col-sm-6">
+
+  <form #f="ngForm" >
+
+<p class="alertkropka">Uwaga! Jesli uzywasz liczby niewymiernej użyj kropki zamiast przecinka :)</p>
+<p class="space-input">Ile pali na 100 km:</p>
+<input type="text" #f1  name="ilespala"  [(ngModel)]="ilespala" required ngModel/>
+<p  class="space-input">Cena paliwa w litrach:</p>
+<input type="text" #f2   name="cena"  [(ngModel)]="cena" required ngModel/>
+<p  class="space-input">Trasa długoć w kilometrach:</p>
+<input type="text" #f3 name="trasa"  [(ngModel)]="trasa" required ngModel/>
+<p  class="space-input">ilosc ludzi na zrzutę:</p>
+<input type="text" #f4   name="ludzie"  [(ngModel)]="ludzie" required ngModel/>
+<br><br>
+
+<button [disabled]="!f.valid"  type="button" (click)=allCost() class="btn btn-success">Oblicz</button>
+</form>
+
+</div>
+
+
+
+
+<div class="col-sm-6">
+<p>wynik:</p>
+<div >
+ <span>Spali :</span> {{ilespali}}  <span>L</span> <br>
+ <span>Całkowity koszt :</span> {{allprice}} <span>zł</span> <br>
+  <span>Koszt na jedną osobę :</span>{{priceoneperson}} <span>zł</span>
+</div>
+
+<app-linki></app-linki>
+<div class="reset">
+<button type="button" class="btn btn-warning"  (click) = "f1.value=''" (click) = "f2.value=''" (click) = "f3.value=''" (click) = "f4.value=''" (click)="rest()" >Reset</button>
+</div>
+<app-mock></app-mock>
+</div>
+</div>
+</div>
+
+
+
+
+
+<app-footer></app-footer>
+
+
+</section>

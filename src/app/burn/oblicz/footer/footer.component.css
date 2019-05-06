@@ -1,0 +1,10 @@
+div{
+  padding: 5px;
+}
+.fa-facebook-square{
+  cursor: pointer;
+  transition: 0.5s;
+}
+.fa-facebook-square:hover{
+  color:#3B5998;
+}
